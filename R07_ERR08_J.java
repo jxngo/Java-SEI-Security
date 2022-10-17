@@ -1,14 +1,12 @@
 public class R07_ERR08_J {
     boolean isName(String s) {
-        try {
-          String names[] = s.split(" ");
-       
-          if (names.length != 2) {
-            return false;
-          }
-          return (isCapitalized(names[0]) && isCapitalized(names[1]));
-        } catch (NullPointerException e) {
+        if (s == null) {
           return false;
         }
+        String names[] = s.split(" ");
+        if (names.length != 2) {
+          return false;
+        }
+        return (isCapitalized(names[0]) && isCapitalized(names[1]));
       }
 }
